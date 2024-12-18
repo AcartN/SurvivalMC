@@ -1,0 +1,18 @@
+[versions]
+kotlin = "2.1.0"
+koin = "4.0.0"
+paper-api = "1.21.4-R0.1-SNAPSHOT"
+kyori = "4.17.0"
+kotlinx-serialization = "1.8.0-RC"
+
+[libraries]
+koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koin" }
+koin-core = { module = "io.insert-koin:koin-core" }
+kyori = { group = "net.kyori", name = "adventure-api", version.ref = "kyori" }
+paper-api = { group = "io.papermc.paper", name = "paper-api", version.ref = "paper-api" }
+kotlinx-serialization-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-core", version.ref = "kotlinx-serialization" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+
+[plugins]
+jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }

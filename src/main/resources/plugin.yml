@@ -1,0 +1,121 @@
+name: survival
+version: ${version}
+main: fr.jeanjacquelin.survival.Survival
+api-version: 1.18
+authors: [ JeanJacquelin ]
+description: Survival plugin made by JJ
+website: jeanjacquelin.fr
+
+commands:
+  feed:
+    description: Feed a player
+    usage: /feed [player]
+    permission: survival.command.feed
+  fly:
+    description: Manage fly
+    usage: /fly [player]
+    permission: survival.command.fly
+  god:
+    description: Manage god
+    usage: /god [player]
+    permission: survival.command.god
+  invisible:
+    description: Manage invisible
+    usage: /invisible [player]
+    permission: survival.command.invisible
+  flyspeed:
+    description: Manage the fly speed of a player
+    usage: /flyspeed [player] [-10..10]
+    permission: survival.command.flyspeed
+  walkspeed:
+    description: Manage the walk speed of a player
+    usage: /walkspeed [player] [-10..10]
+    permission: survival.command.walkspeed
+  info:
+    description: Get some information about a player
+    usage: /info [player]
+    permission: survival.command.info
+  pseudo:
+    description: Set display name of a player
+    usage: /pseudo [player] <pseudo>
+    aliases:
+      - setDisplayName
+      - name
+      - nick
+      - rename
+    permission: survival.command.pseudo
+  heal:
+    description: Heal a player
+    usage: /heal [player]
+    permission: survival.command.heal
+  nightvision:
+    description: Manage night vision
+    aliases:
+      - nv
+      - vision
+      - nightVision
+    usage: /nightVision <player>
+    permission: survival.command.nightVision
+  enderChest:
+    description: Open then ender chest of a player
+    usage: /enderchest <player>
+    permission: survival.command.enderchest
+  teleport:
+    description: Teleport you or a player to a location or to another player
+    usage: /teleport [player] <x> <y> <z> [yaw pitch] [world] || /teleport [player] <player2>
+    aliases:
+      - tp
+    permission: survival.command.teleport
+  gamemode:
+    description: Change the gamemode of a player
+    usage: /gamemode [player] <gamemode>
+    aliases:
+      - gm
+      - g
+    permission: survival.command.gamemode
+  survival:
+    description: Change the gamemode of a player to survival
+    usage: /survival [player]
+    aliases:
+      - g0
+      - gm0
+    permission: survival.command.gamemode
+  creative:
+    description: Change the gamemode of a player to creative
+    usage: /creative [player]
+    aliases:
+      - g1
+      - gm1
+    permission: survival.command.gamemode
+  adventure:
+    description: Change the gamemode of a player to adventure
+    usage: /adventure [player]
+    aliases:
+      - g2
+      - gm2
+    permission: survival.command.gamemode
+  spectator:
+    description: Change the gamemode of a player to spectator
+    usage: /spectator [player]
+    aliases:
+      - g3
+      - gm3
+    permission: survival.command.gamemode
+
+permissions:
+  survival.command.*:
+    description: All commands permission
+    default: op
+    children:
+      survival.command.feed: true
+      survival.command.fly: true
+      survival.command.god: true
+      survival.command.invisible: true
+      survival.command.flyspeed: true
+      survival.command.walkspeed: true
+      survival.command.info: true
+      survival.command.pseudo: true
+      survival.command.heal: true
+      survival.command.nightVision: true
+      survival.command.enderchest: true
+      survival.command.teleport: true
