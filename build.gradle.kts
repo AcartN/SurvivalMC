@@ -100,14 +100,3 @@ fun TaskContainer.createJarTask(
         }
     }
 }
-
-tasks.processResources {
-    expand("version" to project.version)
-}
-//
-//tasks.register<Copy>("deploy") {
-//    group = "deploy"
-//    dependsOn(tasks.jar)
-//    from(file("$buildDir/libs/${project.name}-${project.version}.jar"))
-//    into(file(file("$projectDir/deployPath.txt").readText()))
-//}
