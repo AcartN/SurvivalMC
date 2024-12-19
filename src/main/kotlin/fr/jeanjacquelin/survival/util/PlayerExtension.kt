@@ -1,17 +1,14 @@
 package fr.jeanjacquelin.survival.util
 
 import org.bukkit.Server
-import org.bukkit.attribute.Attribute
 import org.bukkit.entity.Player
 import org.bukkit.plugin.java.JavaPlugin
 import org.bukkit.potion.PotionEffect
 import org.bukkit.potion.PotionEffectType
 
 fun Player.heal() {
-    health = attributeMaxHealth()
+    health = healthScale
 }
-
-fun Player.attributeMaxHealth(): Double = getAttribute(Attribute.MAX_HEALTH)?.value ?: 20.0
 
 fun Player.feed() {
     foodLevel = 20
