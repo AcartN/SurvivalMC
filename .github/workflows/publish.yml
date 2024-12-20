@@ -1,0 +1,35 @@
+name: Publish Plugin
+
+on:
+  push:
+    tags: 'v*'
+
+jobs:
+  publish:
+    permissions:
+      contents: write
+    name: Publish Plugin to Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: 21
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+      - name: Build plugin JAR
+        run: ./gradlew pluginUberJar
+      - name: Run Log 1
+        run: ls -la
+      - name: Run Log 2
+        run: ls -la build/libs
+      - name: Upload Release Asset
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./build/libs/survival-plugin-dev-uber.jar
+          asset_name: ${{ github.event.repository.name }}-${{ github.ref_name }}.jar
+          tag: ${{ github.ref }}

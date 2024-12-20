@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "fr.jeanjacquelin.survival"
-version = "1.0-SNAPSHOT"
+version = "dev"
 
 val main = "${project.group}.MainKt"
 
